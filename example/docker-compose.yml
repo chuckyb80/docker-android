@@ -1,0 +1,33 @@
+services:
+  android-emulator:
+    image: budtmo/docker-android:emulator_14.0
+    container_name: android-container
+    environment:
+      EMULATOR_DEVICE: "Samsung Galaxy S10"
+      WEB_VNC: "true"
+    devices:
+      - "/dev/kvm:/dev/kvm"
+    ports:
+      - "6080:6080"
+      - "5554:5554"
+      - "5555:5555"
+    networks:
+      - android-net
+    restart: unless-stopped
+
+  android-mcp:
+    image: budtmo/docker-android:mcp
+    environment:
+      EMULATOR_HOST: android-emulator
+      EMULATOR_PORT: 5555
+    ports:
+      - "8000:8000"
+    depends_on:
+      - android-emulator
+    networks:
+      - android-net
+    restart: unless-stopped
+
+networks:
+  android-net:
+    driver: bridge

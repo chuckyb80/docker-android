@@ -10,7 +10,7 @@ function is_str_in_list(){
     fi
 }
 
-tasks=("test" "build" "push")
+tasks=("test_app" "test_mcp" "build" "push")
 if [ -z "${1}" ]; then
     read -p "Task ($(echo "${tasks[@]}" | tr ' ' '|')) : " t
 else
@@ -18,7 +18,7 @@ else
 fi
 is_str_in_list ${t} ${tasks[@]}
 
-projects=("base" "emulator" "genymotion" "pro-emulator" "pro-emulator_headless")
+projects=("base" "emulator" "genymotion" "mcp" "pro-emulator" "pro-emulator_headless")
 if [ -z "${2}" ]; then
     read -p "Project ($(echo "${projects[@]}" | tr ' ' '|')) : " p
 else
@@ -102,12 +102,23 @@ function build() {
     fi
 }
 
-function test() {
-    tmp_folder="/app/tmp"
+function test_app() {
+    tmp_folder="/app/tmp-app"
 
-    mkdir -p tmp
-    docker run -it --rm -v "$PWD":/app -w /app python:3.12-slim bash \
+    mkdir -p tmp-app
+    docker run -it --rm -v "$PWD":/app -w /app python:3.14.7-slim bash \
     -c "cd cli && rm -rf ${tmp_folder}/* && \
+    pip install --upgrade pip && pip install -r requirements.txt && \
+    PYTHONPATH=src pytest -v && mv test-results/* ${tmp_folder}/ && chown -R 1300:1301 ${tmp_folder} && \
+    chmod a+x -R ${tmp_folder}"
+}
+
+function test_mcp() {
+    tmp_folder="/app/tmp-mcp"
+
+    mkdir -p tmp-mcp
+    docker run -it --rm -v "$PWD":/app -w /app python:3.14.7-slim bash \
+    -c "cd mcp && rm -rf ${tmp_folder}/* && \
     pip install --upgrade pip && pip install -r requirements.txt && \
     PYTHONPATH=src pytest -v && mv test-results/* ${tmp_folder}/ && chown -R 1300:1301 ${tmp_folder} && \
     chmod a+x -R ${tmp_folder}"

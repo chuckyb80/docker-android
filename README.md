@@ -16,6 +16,7 @@ Advantages of using this project
 5. Integrated with other cloud solutions, e.g. [Genymotion Cloud](https://www.genymotion.com/cloud/)
 6. It can be used to build Android project
 7. It can be used to run unit and UI-Test with different test-frameworks, e.g. Appium, Espresso, etc.
+8. It support mcp server (beta-version)
 
 List of Docker-Images
 ---------------------
@@ -28,6 +29,7 @@ List of Docker-Images
 |13.0|33|budtmo/docker-android:emulator_13.0|budtmo/docker-android:emulator_13.0_<release_version>|
 |14.0|34|budtmo/docker-android:emulator_14.0|budtmo/docker-android:emulator_14.0_<release_version>|
 |-|-|budtmo/docker-android:genymotion|budtmo/docker-android:genymotion_<release_version>|
+|-|-|budtmo/docker-android:mcp|budtmo/docker-android:mcp_<release_version>|
 
 List of Devices
 ---------------

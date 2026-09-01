@@ -6,7 +6,7 @@ backup
 **/*.egg-info
 **/*.pyc
 **/__pycache__
-**/venv
+**/venv-*
 
 # Unit Test
 **/.coverage
