@@ -1,6 +1,6 @@
 services:
   android-emulator:
-    image: budtmo/docker-android:emulator_14.0
+    image: budtmo2/docker-android-pro:emulator_16.0
     container_name: android-container
     environment:
       EMULATOR_DEVICE: "Samsung Galaxy S10"
