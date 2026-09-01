@@ -80,7 +80,7 @@ def main() -> None:
     except AdbConnectionError as ace:
         logger.warning("Starting MCP server without a confirmed emulator connection. "
                        "Tool call will retry the connection automatically.")
-    mcp.run(transport="http", host=settings.emulator_host, port=settings.emulator_port)
+    mcp.run(transport="http", host=settings.mcp_host, port=settings.mcp_port)
 
 
 if __name__ == "__main__":
