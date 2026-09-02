@@ -181,6 +181,17 @@ The differences between normal version and pro version are:
 
 This [document](./documentations/DOCKER-ANDROID-PRO.md) contains detail information about how to use docker-android-pro.
 
+SPONSORS
+--------
+
+<p align="center">
+  <img src="./images/sponsor_swiftproxy.png" alt="Swiftproxy" width="700">
+</p>
+
+**Swiftproxy** — **Swiftproxy** provides high-quality residential proxies for Android testing, automation, and location-based workflows. With **90M+ residential IPs**, HTTP(S)/SOCKS5 support, flexible targeting, and **non-expiring traffic**, Swiftproxy helps users test apps and online services from different locations. **Try Swiftproxy for free today** and get **10% off with code PROXY90**.
+
+[Learn more about Swiftproxy →](https://www.swiftproxy.net/?ref=budtmo)
+
 LICENSE
 -------
 See [License](LICENSE.md)
