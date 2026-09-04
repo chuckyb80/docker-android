@@ -185,7 +185,9 @@ SPONSORS
 --------
 
 <p align="center">
-  <img src="./images/sponsor_swiftproxy.png" alt="Swiftproxy" width="700">
+  <a href="https://www.swiftproxy.net/?ref=budtmo">
+    <img src="./images/sponsor_swiftproxy.png" alt="Swiftproxy" width="700">
+  </a>
 </p>
 
 **Swiftproxy** — **Swiftproxy** provides high-quality residential proxies for Android testing, automation, and location-based workflows. With **90M+ residential IPs**, HTTP(S)/SOCKS5 support, flexible targeting, and **non-expiring traffic**, Swiftproxy helps users test apps and online services from different locations. **Try Swiftproxy for free today** and get **10% off with code PROXY90**.
